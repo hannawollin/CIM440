@@ -10,6 +10,7 @@ var tailx= 450;
 var taily= 200;
 var sky='#82CAFA';
 var grass='green';
+var textcolor='white';
 
 
 function setup() {
@@ -18,7 +19,7 @@ function setup() {
   foodButton=createButton('Food');
   foodButton.position(420,450);
   foodButton.mousePressed(function(){
-  bowlFill='#483C32';
+  bowlFill='#6F4E37';
 });
 }
 
@@ -97,12 +98,16 @@ fill(bowlFill);
 ellipse(440,420,100,30);
 
 
-if (mouseX >= 400 && mouseX<=470){
+if (mouseX >= 400 && mouseX<=480){
 tailx=mouseX;
 }
-if (mouseY >= 200 && mouseY<=250){
+if (mouseY >= 200 && mouseY<=310){
 taily=mouseY;
 }
+fill(textcolor);
+text("Press 'n' for night or 'd' for day", 330,15);
+
+
 }//end of draw
 
 function keyPressed(){
@@ -110,11 +115,13 @@ if (key == 'd'){
   console.log('Day');
   sky='#82CAFA';
   grass= 'green';
+  textcolor='white';
 }
 if (key == 'n'){
   console.log('Night')
   sky='#191970';
-  grass='#195905'
+  grass='#195905';
+  textcolor='grey';
 }
 
 }
