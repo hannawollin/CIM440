@@ -8,6 +8,8 @@ var bowlFill='#b22222';
 var foodButton;
 var tailx= 450;
 var taily= 200;
+var sky='#82CAFA';
+var grass='green';
 
 
 function setup() {
@@ -22,9 +24,9 @@ function setup() {
 
 function draw() {
   // put drawing code here
-background('#82CAFA');
-  fill('green');
-  stroke('green')
+background(sky);
+  fill(grass);
+  stroke(grass)
   rect(0,400,500,100);
   strokeWeight(2.5);
   stroke('black');
@@ -101,8 +103,18 @@ tailx=mouseX;
 if (mouseY >= 200 && mouseY<=250){
 taily=mouseY;
 }
-
-
-
-
 }//end of draw
+
+function keyPressed(){
+if (key == 'd'){
+  console.log('Day');
+  sky='#82CAFA';
+  grass= 'green';
+}
+if (key == 'n'){
+  console.log('Night')
+  sky='#191970';
+  grass='#195905'
+}
+
+}
