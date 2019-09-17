@@ -10,7 +10,7 @@ var tailx= 450;
 var taily= 200;
 var sky='#82CAFA';
 var grass='green';
-var textcolor='white';
+var textcolor=235;
 
 
 function setup() {
@@ -115,7 +115,7 @@ if (key == 'd'){
   console.log('Day');
   sky='#82CAFA';
   grass= 'green';
-  textcolor='white';
+  textcolor=235;
 }
 if (key == 'n'){
   console.log('Night')
