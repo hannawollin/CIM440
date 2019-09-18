@@ -106,9 +106,8 @@ taily=mouseY;
 }
 fill(textcolor);
 text("Press 'n' for night or 'd' for day", 330,15);
-
-
 }//end of draw
+
 
 function keyPressed(){
 if (key == 'd'){
@@ -123,5 +122,4 @@ if (key == 'n'){
   grass='#195905';
   textcolor='grey';
 }
-
-}
+}//end key keyPressed
