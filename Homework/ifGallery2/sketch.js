@@ -32,11 +32,11 @@ function setup() {
   sButton.mousePressed(function(){
     currentImage=2;
   });
-  cButton=createButton("Cat");
+  cButton=createButton("Pig");
   cButton.mousePressed(function(){
     currentImage=3;
   });
-  piButton=createButton("Pig");
+  piButton=createButton("Cat");
   piButton.mousePressed(function(){
     currentImage=4;
   });

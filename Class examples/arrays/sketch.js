@@ -4,17 +4,17 @@
 //"09 TN State Fair #88: Racing Pigs" by SeeMidTN.com (aka Brent) is licensed under CC BY-NC 2.0 https://search.creativecommons.org/photos/7d3c9c50-357f-4c4c-ab00-f791143c93cb
 //"kitty" by devaburger is licensed under CC BY-NC-SA 2.0 https://search.creativecommons.org/photos/ab6ae633-3e62-493d-becc-c07300aacc1f
 
-var puppy, dinosaur, sloth, pig, cat;
 var currentAnimal;
 var currentImage=0;
+var imageArray=[];
 
 function preload(){
   //load media
-  puppy=loadImage("images/puppy.jpg");
-  dinosaur=loadImage("images/dinosaur.jpg");
-  sloth=loadImage("images/sloth.jpg");
-  pig=loadImage("images/pig.jpg");
-  cat=loadImage('images/cat.jpg');
+  imageArray[0]=loadImage("images/puppy.jpg");
+  imageArray[1]=loadImage("images/dinosaur.jpg");
+  imageArray[2]=loadImage("images/sloth.jpg");
+  imageArray[3]=loadImage("images/pig.jpg");
+  imageArray[4]=loadImage('images/cat.jpg');
 }
 
 function setup() {
@@ -32,35 +32,23 @@ function setup() {
   sButton.mousePressed(function(){
     currentImage=2;
   });
-  cButton=createButton("Cat");
+  cButton=createButton("Pig");
   cButton.mousePressed(function(){
     currentImage=3;
   });
-  piButton=createButton("Pig");
+  piButton=createButton("Cat");
   piButton.mousePressed(function(){
     currentImage=4;
   });
 
-  //in setup instead of initial var because puppy wasn't defined then
-  currentAnimal=puppy;
 }
 
 function draw() {
   // put drawing code here
   background(255);
   console.log("Current Image "+currentImage);
-image(currentAnimal,0,0,currentAnimal.width/4,currentAnimal.height/4);
-  if (currentImage==0){
-    currentAnimal=puppy;
-  }else if(currentImage==1){
-  currentAnimal=dinosaur;
-  }else if(currentImage==2){
-    currentAnimal=sloth;
-  }else if(currentImage==3){
-    currentAnimal=cat;
-  }else if(currentImage==4){
-    currentAnimal=pig;
-  }
+image(imageArray[currentImage],0,0,imageArray[currentImage].width/4,imageArray[currentImage].height/4);
+
 
 //image(currentAnimal,0,0,currentAnimal.width/4,currentAnimal.height/4);
 }
