@@ -2,9 +2,9 @@
 
 
 
-var questions=["Is Iceland always covered in ice?","What ocean lies east of the US?"];
-var options=["1) true 2) false","1) pacific 2) eastern 3) indian 4) atlantic"];
-var answers=[1,3];
+var questions=["Is Iceland always covered in ice?","What ocean lies east of the US?",'What is the smallest state in the US?'];
+var options=["1) true 2) false","1) pacific 2) eastern 3) indian 4) atlantic","1) Vermont 2) New Jersey 3) Rhode Island 4) Virginia"];
+var answers=[1,3,2];
 
 var buttons=[];
 
