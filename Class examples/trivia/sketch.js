@@ -1,3 +1,7 @@
+//add another question
+
+
+
 var questions=["Is Iceland always covered in ice?","What ocean lies east of the US?"];
 var options=["1) true 2) false","1) pacific 2) eastern 3) indian 4) atlantic"];
 var answers=[1,3];
