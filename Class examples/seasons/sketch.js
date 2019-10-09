@@ -34,6 +34,8 @@ for(var i=0; i<100; i++){
   snowX[i]=random(0,width); //choose a number from 0 to width-1, 399
   snowY[i]=random(0,-500);
 }
+console.log('snowX'+snowX);
+console.log('snowY'+snowY);
 }
 
 function draw() {
