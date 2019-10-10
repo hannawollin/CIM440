@@ -1,3 +1,4 @@
+//"Abstract Backgrounds" by NichoDesign is licensed under CC BY-NC-SA 2.0  https://search.creativecommons.org/photos/24414ada-6981-43bf-bbd9-ca9de2e8ce5d
 var ttt=[""];
 var X="X";
 var O="O";
@@ -6,10 +7,12 @@ var x,o,reset;
 var hitx=[50,150,250];
 var hity=[50,150,250];
 var hitsize=100;
+var background
 
 function setup() {
   // put setup code here
   createCanvas(400,400);
+  background=loadImage('back.jpg');
   x=createButton(X);
   x.mousePressed(function(){currentPlayer=X;})
   x.position(160,370);
@@ -18,13 +21,13 @@ function setup() {
   o.position(210,370);
   reset=createButton('Reset');
   reset.mousePressed(function(){ttt=[''];})
-  reset.position(350,375);
-
+  reset.position(345,370);
 }//endsetup
 
 function draw() {
   // put drawing code here
-  background(67,191,199);
+  //background(67,191,199);
+  image(background, -100,-100);
   textSize(30);
   stroke(255);
   fill(255);
@@ -32,11 +35,13 @@ function draw() {
   //console.log(currentPlayer);
   //console.log("ttt"+ttt);
   stroke(255);
+  strokeWeight(8);
   line(50,150,350,150);
   line(50,250,350,250);
   line(150,50,150,350);
   line(250,50,250,350);
   textSize(100);
+  strokeWeight(1);
   text(ttt[0],65,135);
   text(ttt[1],65,135+100);
   text(ttt[2],65,135+200);
@@ -48,8 +53,8 @@ function draw() {
   text(ttt[8],65+200,135+200);
 
   textSize(30);
-  stroke('yellow');
-  fill('yellow');
+  stroke('#CD5C5C');
+  fill('#CD5C5C');
 if (ttt[0]==ttt[1] && ttt[1]==ttt[2]){
   text ("THE WINNER IS PLAYER " + ttt[0] +"!", 5,220);
 }//col 1
@@ -121,4 +126,4 @@ function mousePressed() {
     //console.log('zone 8');
     if(ttt[8] !=X && ttt[8] != O){
     ttt[8]=currentPlayer; }}
-}//end mousePressed loop
+}//end mousePressed
