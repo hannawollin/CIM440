@@ -127,6 +127,3 @@ function mousePressed() {
     if(ttt[8] !=X && ttt[8] != O){
     ttt[8]=currentPlayer; }}
 }//end mousePressed
-
-
-//why is this not working
