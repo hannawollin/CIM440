@@ -15,13 +15,13 @@ function setup() {
   background=loadImage('back.jpg');
   x=createButton(X);
   x.mousePressed(function(){currentPlayer=X;})
-  x.position(160,370);
+  x.position(160,360);
   o=createButton(O);
   o.mousePressed(function(){currentPlayer=O;})
-  o.position(210,370);
+  o.position(210,360);
   reset=createButton('Reset');
   reset.mousePressed(function(){ttt=[''];})
-  reset.position(345,370);
+  reset.position(345,360);
 }//endsetup
 
 function draw() {
@@ -32,6 +32,9 @@ function draw() {
   stroke(255);
   fill(255);
   text("Tic-Tac-Toe", 120,30);
+  textSize(12);
+  strokeWeight(0.5);
+  text("*Switch players with X and O buttons every turn*", 70,395);
   //console.log(currentPlayer);
   //console.log("ttt"+ttt);
   stroke(255);
