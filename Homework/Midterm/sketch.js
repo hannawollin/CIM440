@@ -48,10 +48,12 @@ function draw() {
   //console.log("ttt"+ttt);
   stroke(255);
   strokeWeight(8);
-  line(50,150,350,150);
-  line(50,250,350,250);
-  line(150,50,150,350);
-  line(250,50,250,350);
+  //line(50,150,350,150);
+  //line(50,250,350,250);
+  //line(150,50,150,350);
+  //line(250,50,250,350);
+grid();
+
   textSize(100);
   strokeWeight(1);
   text(ttt[0],65,135);
@@ -139,3 +141,10 @@ function mousePressed() {
     if(ttt[8] !=X && ttt[8] != O){
     ttt[8]=currentPlayer; }}
 }//end mousePressed
+
+function grid(){
+  line(50,150,350,150);
+  line(50,250,350,250);
+  line(150,50,150,350);
+  line(250,50,250,350);
+}
