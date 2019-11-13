@@ -27,7 +27,7 @@ function setup() {
   x.position(165+230,360+105);
   o=createButton(O);
   o.mousePressed(function(){currentPlayer=O;})
-  o.position(210+230,360+105);
+  o.position(210+220,360+105);
   reset=createButton('Reset');
   reset.mousePressed(function(){ttt=[''];})
   reset.position(345+220,360+105);
