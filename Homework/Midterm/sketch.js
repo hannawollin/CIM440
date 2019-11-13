@@ -11,17 +11,26 @@ var background
 
 function setup() {
   // put setup code here
-  createCanvas(400,400);
+  var cnv = createCanvas(400,400);////////////
+ cnv.id("mycanvas");////////////////////
+ var container0 = createDiv();//////////////
+  container0.id("container0");//////////////
+  select("#container0").html("<h1>Tic-Tac-Toe</h1>");//////////////
+  select("#container0").style("width", "400px");/////////////
+  select("#container0").style("margin", "50px auto");////////////////
+  cnv.parent("#container0");/////////////////////
+ select('body').style("background-color","#FFE5B4");////////////
+  //createCanvas(400,400);
   background=loadImage('back.jpg');
   x=createButton(X);
   x.mousePressed(function(){currentPlayer=X;})
-  x.position(165,360);
+  x.position(165+230,360+105);
   o=createButton(O);
   o.mousePressed(function(){currentPlayer=O;})
-  o.position(210,360);
+  o.position(210+230,360+105);
   reset=createButton('Reset');
   reset.mousePressed(function(){ttt=[''];})
-  reset.position(345,360);
+  reset.position(345+220,360+105);
 }//endsetup
 
 function draw() {
@@ -31,7 +40,7 @@ function draw() {
   textSize(30);
   stroke(255);
   fill(255);
-  text("Tic-Tac-Toe", 120,30);
+  //text("Tic-Tac-Toe", 120,30);
   textSize(13);
   strokeWeight(0.5);
   text("**Switch players with X and O buttons every turn**", 50,393);
