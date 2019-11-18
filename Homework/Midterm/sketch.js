@@ -107,6 +107,9 @@ function mousePressed() {
   if(mouseX>hitx[0]&&mouseX<hitx[0]+hitsize&& mouseY>hity[0]&&mouseY<hity[0]+hitsize){
     //console.log('zone 0');
     if(ttt[0] !=X && ttt[0] != O){
+      //if currentPlayer == '0' currentplayer = 'x'
+      //if currentPlayer == 'x' currentplayer = 'o'
+
     ttt[0]=currentPlayer; }}
   if(mouseX>hitx[0]&&mouseX<hitx[0]+hitsize&& mouseY>hity[1]&&mouseY<hity[1]+hitsize){
     //console.log('zone 1');
