@@ -23,12 +23,18 @@ function preload(){
   Mikaface=loadImage('mikaface.png');
   Stormyface=loadImage('stormyface.png');
   Oreoface=loadImage('oreoface.png');
-  Mikawalk=loadImage('mikawalk.png');
-  Stormywalk=loadImage('stormywalk.png');
-  Oreowalk=loadImage('oreowalk.png');
-  Yarn=loadImage('yarn.png');
-
-}
+  Yarn1=loadImage('yarn1.png');
+  Yarn2=loadImage('Yarn2.png');
+  Yarn3=loadImage('Yarn3.png');
+  Yarn4=loadImage('Yarn4.png');
+  Yarn5=loadImage('Yarn5.png');
+  Yarn6=loadImage('Yarn6.png');
+  Yarn7=loadImage('Yarn7.png');
+  Yarn8=loadImage('Yarn8.png');
+  Mikawalk=loadAnimation('mikaw1.png', 'mikaw2.png');
+  Oreowalk=loadAnimation('oreow1.png', 'oreow2.png');
+  Stormywalk=loadAnimation('stormyw1.png', 'stormyw2.png');
+}//end preload
 function setup() {
   // put setup code here
   createCanvas(800,500);
@@ -53,6 +59,10 @@ function setup() {
   yarnbutton.style("font-family","Comic Sans MS");
   yarnbutton.style("background-color","red");
   yarnbutton.style("color","#fff");
+
+  Mikawalk.frameDelay = 20;
+  Stormywalk.frameDelay = 20;
+  Oreowalk.frameDelay = 20;
 
   //tic-tac-toe midtermsetup
   reset=createButton('Reset');
@@ -96,7 +106,6 @@ if (page==0){ //home
 }//end draw
 
 
-
 function Home(){
   background('#75DAFF');
   strokeWeight(0);
@@ -112,7 +121,6 @@ function Home(){
   text("Mika",460,480);
   image(Stormy, 390,60,Mika.width/2, Mika.height/2);
   text("Stormy",625,400);
-
 }//end home page
 
 
@@ -121,7 +129,7 @@ function Tictactoe(){
 background('lightseagreen');
 strokeWeight(0);
 textSize(50);
-fill('blue');
+fill('#CD5C5C');
 text(tictactoe,270,60);
 radioX.show();
 radioO.show();
@@ -160,9 +168,7 @@ if (ttt[0]==O){
   if (valO==2){
     image(Mikaface,165,95,Mikaface.width/3.8,Mikaface.height/3.8);}
   if (valO==3){
-    image(Stormyface,165,95,Mikaface.width/3.8,Mikaface.height/3.8);}
-  }
-
+    image(Stormyface,165,95,Mikaface.width/3.8,Mikaface.height/3.8);}}
 if (ttt[1]==X){
     if (valX==1) {
       image(Oreoface,165,195,Mikaface.width/3.8,Mikaface.height/3.8);}
@@ -176,9 +182,7 @@ if (ttt[1]==O){
   if (valO==2){
     image(Mikaface,165,195,Mikaface.width/3.8,Mikaface.height/3.8);}
   if (valO==3){
-    image(Stormyface,165,195,Mikaface.width/3.8,Mikaface.height/3.8);}
-}
-
+    image(Stormyface,165,195,Mikaface.width/3.8,Mikaface.height/3.8);}}
 if (ttt[2]==X){
     if (valX==1) {
       image(Oreoface,165,295,Mikaface.width/3.8,Mikaface.height/3.8);}
@@ -192,9 +196,7 @@ if (ttt[2]==O){
   if (valO==2){
     image(Mikaface,165,295,Mikaface.width/3.8,Mikaface.height/3.8);}
   if (valO==3){
-    image(Stormyface,165,295,Mikaface.width/3.8,Mikaface.height/3.8);}
-}
-
+    image(Stormyface,165,295,Mikaface.width/3.8,Mikaface.height/3.8);}}
 if (ttt[3]==X){
     if (valX==1) {
       image(Oreoface,270,95,Mikaface.width/3.8,Mikaface.height/3.8);}
@@ -208,9 +210,7 @@ if (ttt[3]==O){
   if (valO==2){
     image(Mikaface,270,95,Mikaface.width/3.8,Mikaface.height/3.8);}
   if (valO==3){
-    image(Stormyface,270,95,Mikaface.width/3.8,Mikaface.height/3.8);}
-}
-
+    image(Stormyface,270,95,Mikaface.width/3.8,Mikaface.height/3.8);}}
 if (ttt[4]==X){
     if (valX==1) {
       image(Oreoface,270,195,Mikaface.width/3.8,Mikaface.height/3.8);}
@@ -224,9 +224,7 @@ if (ttt[4]==O){
   if (valO==2){
     image(Mikaface,270,195,Mikaface.width/3.8,Mikaface.height/3.8);}
   if (valO==3){
-    image(Stormyface,270,195,Mikaface.width/3.8,Mikaface.height/3.8);}
-}
-
+    image(Stormyface,270,195,Mikaface.width/3.8,Mikaface.height/3.8);}}
 if (ttt[5]==X){
     if (valX==1) {
       image(Oreoface,270,295,Mikaface.width/3.8,Mikaface.height/3.8);}
@@ -240,9 +238,7 @@ if (ttt[5]==O){
   if (valO==2){
     image(Mikaface,270,295,Mikaface.width/3.8,Mikaface.height/3.8);}
   if (valO==3){
-    image(Stormyface,270,295,Mikaface.width/3.8,Mikaface.height/3.8);}
-}
-
+    image(Stormyface,270,295,Mikaface.width/3.8,Mikaface.height/3.8);}}
 if (ttt[6]==X){
     if (valX==1) {
       image(Oreoface,375,95,Mikaface.width/3.8,Mikaface.height/3.8);}
@@ -256,9 +252,7 @@ if (ttt[6]==O){
   if (valO==2){
     image(Mikaface,375,95,Mikaface.width/3.8,Mikaface.height/3.8);}
   if (valO==3){
-    image(Stormyface,375,95,Mikaface.width/3.8,Mikaface.height/3.8);}
-}
-
+    image(Stormyface,375,95,Mikaface.width/3.8,Mikaface.height/3.8);}}
 if (ttt[7]==X){
     if (valX==1) {
       image(Oreoface,375,195,Mikaface.width/3.8,Mikaface.height/3.8);}
@@ -272,9 +266,7 @@ if (ttt[7]==O){
   if (valO==2){
     image(Mikaface,375,195,Mikaface.width/3.8,Mikaface.height/3.8);}
   if (valO==3){
-    image(Stormyface,375,195,Mikaface.width/3.8,Mikaface.height/3.8);}
-}
-
+    image(Stormyface,375,195,Mikaface.width/3.8,Mikaface.height/3.8);}}
 if (ttt[8]==X){
     if (valX==1) {
       image(Oreoface,375,295,Mikaface.width/3.8,Mikaface.height/3.8);}
@@ -288,10 +280,43 @@ if (ttt[8]==O){
   if (valO==2){
     image(Mikaface,375,295,Mikaface.width/3.8,Mikaface.height/3.8);}
   if (valO==3){
-    image(Stormyface,375,295,Mikaface.width/3.8,Mikaface.height/3.8);}
-}
+    image(Stormyface,375,295,Mikaface.width/3.8,Mikaface.height/3.8);}}
 
-
+    textSize(45);
+    strokeWeight(4);
+    stroke('blue');
+    fill('blue');
+    if (ttt[0]==ttt[1] && ttt[1]==ttt[2]){
+    text ("THE WINNER IS PLAYER " + ttt[0] +"!", 155,265);
+    }//col 1
+    if (ttt[3]==ttt[4] && ttt[4]==ttt[5]){
+    if (ttt[3]==X || ttt[3]==O){
+    text ("THE WINNER IS PLAYER " + ttt[3] +"!", 155,265);}
+    }//col 2
+    if (ttt[6]==ttt[7] && ttt[7]==ttt[8]){
+    if (ttt[6]==X || ttt[6]==O){
+    text ("THE WINNER IS PLAYER " + ttt[6] +"!", 155,265);}
+    }//col 3
+    if (ttt[0]==ttt[3] && ttt[3]==ttt[6]){
+    if (ttt[0]==X || ttt[0]==O){
+    text ("THE WINNER IS PLAYER " + ttt[0] +"!", 155,265);}
+    }//row 1
+    if (ttt[1]==ttt[4] && ttt[4]==ttt[7]){
+    if (ttt[1]==X || ttt[1]==O){
+    text ("THE WINNER IS PLAYER " + ttt[1] +"!", 155,265);}
+    }//row 2
+    if (ttt[2]==ttt[5] && ttt[5]==ttt[8]){
+    if (ttt[2]==X || ttt[2]==O){
+    text ("THE WINNER IS PLAYER " + ttt[2] +"!", 155,265);}
+    }//row 3
+    if (ttt[0]==ttt[4] && ttt[4]==ttt[8]){
+    if (ttt[0]==X || ttt[0]==O){
+    text ("THE WINNER IS PLAYER " + ttt[0] +"!", 155,265);}
+    }//diagoal 1
+    if (ttt[2]==ttt[4] && ttt[4]==ttt[6]){
+    if (ttt[2]==X || ttt[2]==O){
+    text ("THE WINNER IS PLAYER " + ttt[2] +"!", 155,265);}
+    }//diagonal 2
 
 }//end tictactoe page
 
@@ -348,23 +373,24 @@ function mousePressed() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 function Yarngame(){
 background('pink');
+fill('brown');
+rect(0,90,900,500);
 //for(var i=0; i<1; i++){
-randomSeed(45);
-    image(Mikawalk,random(100,600),random(100,300), Mikawalk.width/5, Mikawalk.height/5);
-    image(Oreowalk,random(100,600),random(100,300), Mikawalk.width/5, Mikawalk.height/5);
-    image(Stormywalk,random(100,600),random(100,300), Mikawalk.width/5, Mikawalk.height/5);
-    image(Yarn, random(100,600),random(100,300),Yarn.width/6, Yarn.height/6);
+randomSeed(848);
+animation(Mikawalk, 500, 150);
+animation(Oreowalk, 300, 250);
+animation(Stormywalk, 700, 350);
+    //image(Mikawalk,random(100,600),random(300,350), Mikawalk.width/5, Mikawalk.height/5);
+    //image(Oreowalk,random(100,600),random(300,350), Mikawalk.width/5, Mikawalk.height/5);
+    //image(Stormywalk,random(100,600),random(300,350), Mikawalk.width/5, Mikawalk.height/5);
+    image(Yarn1, random(100,600),random(100,300),Yarn1.width/6, Yarn1.height/6);
+    image(Yarn2, random(100,600),random(100,300),Yarn2.width/6, Yarn2.height/6);
+    image(Yarn3, random(100,600),random(100,300),Yarn3.width/6, Yarn3.height/6);
+    image(Yarn4, random(100,600),random(100,300),Yarn4.width/6, Yarn4.height/6);
+    image(Yarn5, random(100,600),random(100,300),Yarn5.width/6, Yarn5.height/6);
+    image(Yarn6, random(100,600),random(100,300),Yarn6.width/6, Yarn6.height/6);
+    image(Yarn7, random(100,600),random(100,300),Yarn7.width/6, Yarn7.height/6);
+    image(Yarn8, random(100,600),random(100,300),Yarn8.width/6, Yarn8.height/6);
 }
