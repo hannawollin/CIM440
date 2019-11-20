@@ -4,7 +4,17 @@ var page=0;  //page 0=home, page 1=tictactoe
 var tictactoe="Tic-Tac-Toe";
 var hometext='Kitty Korner Games';
 var tictactoebutton, homebutton, yarnbutton;
-var Oreo, Mika, Stormy,pic,Mikaface,Oreoface,Stormyface, Oreowalk, Stormywalk, Mikawalk, Yarn;
+var a=0;
+var b=0;
+var c=0;
+var d=0;
+var e=0;
+var f=0;
+var g=0;
+var h=0;
+var x=700;
+var y=80;
+var yarnreset, MikaS, OreoS,StormyS,Oreo, Mika, Stormy,pic,Mikaface,Oreoface,Stormyface, Oreowalk, Stormywalk, Mikawalk, Yarn1, Yarn2, Yarn3, Yarn4, Yarn5, Yarn6,Yarn7, Yarn8, box;
 
 //from tic-tac-toe midterm
 var ttt=[""];
@@ -23,46 +33,107 @@ function preload(){
   Mikaface=loadImage('mikaface.png');
   Stormyface=loadImage('stormyface.png');
   Oreoface=loadImage('oreoface.png');
-  Yarn1=loadImage('yarn1.png');
-  Yarn2=loadImage('Yarn2.png');
-  Yarn3=loadImage('Yarn3.png');
-  Yarn4=loadImage('Yarn4.png');
-  Yarn5=loadImage('Yarn5.png');
-  Yarn6=loadImage('Yarn6.png');
-  Yarn7=loadImage('Yarn7.png');
-  Yarn8=loadImage('Yarn8.png');
   Mikawalk=loadAnimation('mikaw1.png', 'mikaw2.png');
   Oreowalk=loadAnimation('oreow1.png', 'oreow2.png');
   Stormywalk=loadAnimation('stormyw1.png', 'stormyw2.png');
+
 }//end preload
 function setup() {
   // put setup code here
   createCanvas(800,500);
   homebutton=createButton('Home');
   homebutton.mousePressed(function(){page=0;})
-  homebutton.position(50,100);
+  homebutton.position(50,50);
   homebutton.size(80,80);
   homebutton.style("font-family","Comic Sans MS");
   homebutton.style("background-color","#00f");
   homebutton.style("color","#fff");
   tictactoebutton=createButton(tictactoe);
   tictactoebutton.mousePressed(function(){page=1;})
-  tictactoebutton.position(50,200);
+  tictactoebutton.position(50,150);
   tictactoebutton.size(80,80);
   tictactoebutton.style("font-family","Comic Sans MS");
   tictactoebutton.style("background-color","#32CD32");
   tictactoebutton.style("color","#fff");
   yarnbutton=createButton('Yarn Game');
   yarnbutton.mousePressed(function(){page=2;})
-  yarnbutton.position(50,300);
+  yarnbutton.position(50,250);
   yarnbutton.size(80,80);
   yarnbutton.style("font-family","Comic Sans MS");
   yarnbutton.style("background-color","red");
   yarnbutton.style("color","#fff");
-
   Mikawalk.frameDelay = 20;
   Stormywalk.frameDelay = 20;
   Oreowalk.frameDelay = 20;
+  MikaS = createSprite(470, 110);
+  MikaS.addAnimation('normal', Mikawalk);
+  OreoS = createSprite(700, 120);
+  OreoS.addAnimation('normal', Oreowalk);
+  StormyS = createSprite(250, 110);
+  StormyS.addAnimation('normal', Stormywalk);
+  Yarn1=createSprite(400,250);
+  Yarn1.addAnimation('n', 'yarn1.png');
+  Yarn2=createSprite(700,270);
+  Yarn2.addAnimation('n', 'Yarn2.png');
+  Yarn3=createSprite(600,200);
+  Yarn3.addAnimation('n', 'Yarn3.png');
+  Yarn4=createSprite(420,400);
+  Yarn4.addAnimation('n', 'Yarn4.png');
+  Yarn5=createSprite(250,420);
+  Yarn5.addAnimation('n', 'Yarn5.png');
+  Yarn6=createSprite(200,350);
+  Yarn6.addAnimation('n', 'Yarn6.png');
+  Yarn7=createSprite(550,300);
+  Yarn7.addAnimation('n', 'Yarn7.png');
+  Yarn8=createSprite(270,240);
+  Yarn8.addAnimation('n', 'Yarn8.png');
+  radioY = createRadio();
+  radioY.option('Oreo', 3);
+  radioY.option('Mika', 2);
+  radioY.option('Stormy', 1);
+  radioY.style('width', '750px');
+  radioY.position(600,15);
+  radioY.style("font-family","Comic Sans MS");
+  box=createSprite(700,420);
+  box.addAnimation('n','box.png');
+  yarnreset=createButton('Reset');
+  yarnreset.mousePressed(yarnReset);
+  yarnreset.position(150,430);
+  yarnreset.size(70,50);
+  yarnreset.style("font-family","Comic Sans MS");
+  yarnreset.style("background-color","#8b0000");
+  yarnreset.style("color","#fff");
+  mazebutton=createButton('Maze');
+  mazebutton.mousePressed(function(){page=3;})
+  mazebutton.position(50,350);
+  mazebutton.size(80,80);
+  mazebutton.style("font-family","Comic Sans MS");
+  mazebutton.style("background-color","orange");
+  mazebutton.style("color","#fff");
+  fish = createSprite(195, 450);
+  fish.addAnimation('normal', 'fish.png');
+  up = createSprite(750, 310);
+  up.addAnimation('normal', 'long.png');
+  up1 = createSprite(150, 320);
+  up1.addAnimation('normal', 'long.png');
+  up2 = createSprite(150, 220);
+  up2.addAnimation('normal', 'long.png');
+
+  side = createSprite(622, 450);
+  side.addAnimation('normal', 'long copy.png');
+  side1 = createSprite(372, 450);
+  side1.addAnimation('normal', 'long copy.png');
+  side2 = createSprite(278, 85);
+  side2.addAnimation('normal', 'long copy.png');
+  side3 = createSprite(508, 85);
+  side3.addAnimation('normal', 'long copy.png');
+
+
+
+
+
+
+
 
   //tic-tac-toe midtermsetup
   reset=createButton('Reset');
@@ -95,6 +166,8 @@ function draw() {
   reset.hide();
   radioX.hide();
   radioO.hide();
+  radioY.hide();
+  yarnreset.hide();
   console.log(page);
 if (page==0){ //home
   Home();
@@ -102,10 +175,10 @@ if (page==0){ //home
   Tictactoe();
 }else if (page==2){//yarngame page
   Yarngame();
+}else if (page==3){
+  Maze();
 }
 }//end draw
-
-
 function Home(){
   background('#75DAFF');
   strokeWeight(0);
@@ -120,17 +193,15 @@ function Home(){
   fill('#e75480');
   text("Mika",460,480);
   image(Stormy, 390,60,Mika.width/2, Mika.height/2);
+  fill('gold');
   text("Stormy",625,400);
 }//end home page
-
-
-
 function Tictactoe(){
 background('lightseagreen');
 strokeWeight(0);
-textSize(50);
+textSize(70);
 fill('#CD5C5C');
-text(tictactoe,270,60);
+text(tictactoe,220,80);
 radioX.show();
 radioO.show();
 reset.show();
@@ -147,14 +218,11 @@ line(50+200,150+70,350+200,150+70);
 line(50+200,250+70,350+200,250+70);
 line(150+200,50+70,150+200,350+70);
 line(250+200,50+70,250+200,350+70);
-console.log('currentPlayer'+currentPlayer);
-
+//console.log('currentPlayer'+currentPlayer);
 let valX = radioX.value();
 let valO = radioO.value();
-
-console.log("valx" + valX);
-console.log("valo" +valO);
-
+//console.log("valx" + valX);
+//console.log("valo" +valO);
 if (ttt[0]==X){
     if (valX==1) {
       image(Oreoface,165,95,Mikaface.width/3.8,Mikaface.height/3.8);}
@@ -319,9 +387,6 @@ if (ttt[8]==O){
     }//diagonal 2
 
 }//end tictactoe page
-
-
-
 function mousePressed() {
   if(mouseX>hitx[0]&&mouseX<hitx[0]+hitsize&& mouseY>hity[0]&&mouseY<hity[0]+hitsize){
     //console.log('zone 0');
@@ -369,28 +434,189 @@ function mousePressed() {
     if (currentPlayer == O){currentPlayer = X;}else if (currentPlayer == X){currentPlayer = O;}
     ttt[8]=currentPlayer; }}
 }//end mousePressed
-
-
-
-
 function Yarngame(){
 background('pink');
 fill('brown');
 rect(0,90,900,500);
-//for(var i=0; i<1; i++){
-randomSeed(848);
-animation(Mikawalk, 500, 150);
-animation(Oreowalk, 300, 250);
-animation(Stormywalk, 700, 350);
-    //image(Mikawalk,random(100,600),random(300,350), Mikawalk.width/5, Mikawalk.height/5);
-    //image(Oreowalk,random(100,600),random(300,350), Mikawalk.width/5, Mikawalk.height/5);
-    //image(Stormywalk,random(100,600),random(300,350), Mikawalk.width/5, Mikawalk.height/5);
-    image(Yarn1, random(100,600),random(100,300),Yarn1.width/6, Yarn1.height/6);
-    image(Yarn2, random(100,600),random(100,300),Yarn2.width/6, Yarn2.height/6);
-    image(Yarn3, random(100,600),random(100,300),Yarn3.width/6, Yarn3.height/6);
-    image(Yarn4, random(100,600),random(100,300),Yarn4.width/6, Yarn4.height/6);
-    image(Yarn5, random(100,600),random(100,300),Yarn5.width/6, Yarn5.height/6);
-    image(Yarn6, random(100,600),random(100,300),Yarn6.width/6, Yarn6.height/6);
-    image(Yarn7, random(100,600),random(100,300),Yarn7.width/6, Yarn7.height/6);
-    image(Yarn8, random(100,600),random(100,300),Yarn8.width/6, Yarn8.height/6);
+fill('white');
+textSize(20);
+text('CHOOSE A CAT & PUSH THE YARN INTO THE BOX', 80,35);
+text("SCORE", 280,480);
+yarnreset.show();
+radioY.show();
+MikaS.scale=0.5;
+OreoS.scale=0.5;
+StormyS.scale=0.5;
+Yarn1.scale=0.2;
+Yarn2.scale=0.2;
+Yarn3.scale=0.2;
+Yarn4.scale=0.2;
+Yarn5.scale=0.2;
+Yarn6.scale=0.2;
+Yarn7.scale=0.2;
+Yarn8.scale=0.2;
+box.scale=0.4;
+MikaS.displace(Yarn1);
+MikaS.displace(Yarn2);
+MikaS.displace(Yarn3);
+MikaS.displace(Yarn4);
+MikaS.displace(Yarn5);
+MikaS.displace(Yarn6);
+MikaS.displace(Yarn7);
+MikaS.displace(Yarn8);
+OreoS.displace(Yarn1);
+OreoS.displace(Yarn2);
+OreoS.displace(Yarn3);
+OreoS.displace(Yarn4);
+OreoS.displace(Yarn5);
+OreoS.displace(Yarn6);
+OreoS.displace(Yarn7);
+OreoS.displace(Yarn8);
+StormyS.displace(Yarn1);
+StormyS.displace(Yarn2);
+StormyS.displace(Yarn3);
+StormyS.displace(Yarn4);
+StormyS.displace(Yarn5);
+StormyS.displace(Yarn6);
+StormyS.displace(Yarn7);
+StormyS.displace(Yarn8);
+
+if(radioY.value()==2){
+MikaS.position.x=mouseX;
+MikaS.position.y=mouseY;
+}
+if(radioY.value()==3){
+OreoS.position.x=mouseX;
+OreoS.position.y=mouseY;
+}
+if(radioY.value()==1){
+StormyS.position.x=mouseX;
+StormyS.position.y=mouseY;
+}
+if(Yarn1.overlap(box)){
+    Yarn1.visible=false;
+  //removeSprite(Yarn1);
+  a=1;}
+if(Yarn2.overlap(box)){
+    Yarn2.visible=false;
+  //removeSprite(Yarn2);
+  b=1;}
+if(Yarn3.overlap(box)){
+    Yarn3.visible=false;
+  c=1;}
+if(Yarn4.overlap(box)){
+    Yarn4.visible=false;
+  d=1;}
+if(Yarn5.overlap(box)){
+    Yarn5.visible=false;
+  e=1;}
+if(Yarn6.overlap(box)){
+    Yarn6.visible=false;
+  f=1;}
+if(Yarn7.overlap(box)){
+    Yarn7.visible=false;
+  g=1;}
+if(Yarn8.overlap(box)){
+    Yarn8.visible=false;
+  h=1;}
+drawSprites();
+textSize(50);
+text(a+b+c+d+e+f+g+h, 300,440);
+if (a+b+c+d+e+f+g+h==8){
+  textSize(80);
+  fill('gold');
+  text('WINNER!', 220,300);}
+}
+function yarnReset(){
+Yarn1.visible=true;
+Yarn1.position.x=random(200,600);
+Yarn1.position.y=random(200,400);
+Yarn2.visible=true;
+Yarn2.position.x=random(200,600);
+Yarn2.position.y=random(200,400);
+Yarn3.visible=true;
+Yarn3.position.x=random(200,600);
+Yarn3.position.y=random(200,400);
+Yarn4.visible=true;
+Yarn4.position.x=random(200,600);
+Yarn4.position.y=random(200,400);
+Yarn5.visible=true;
+Yarn5.position.x=random(200,600);
+Yarn5.position.y=random(200,400);
+Yarn6.visible=true;
+Yarn6.position.x=random(200,600);
+Yarn6.position.y=random(200,400);
+Yarn7.visible=true;
+Yarn7.position.x=random(200,600);
+Yarn7.position.y=random(200,400);
+Yarn8.visible=true;
+Yarn8.position.x=random(200,600);
+Yarn8.position.y=random(200,400);
+StormyS.position.x=250
+StormyS.position.y=110;
+MikaS.position.x=470;
+MikaS.position.y=110;
+OreoS.position.x=700;
+OreoS.position.y=120;
+a=0;
+b=0;
+c=0;
+d=0;
+e=0;
+f=0;
+g=0;
+h=0;
+}
+
+function Maze(){
+background('green');
+fill('black');
+textSize(20);
+text('CHOOSE A CAT:', 430,35);
+radioY.show();
+drawSprites()
+up.scale=0.3;
+side.scale=0.3;
+side1.scale=0.3;
+up1.scale=0.3;
+fish.scale=0.2;
+up2.scale=0.3;
+side2.scale=0.3;
+side3.scale=0.3;
+
+
+OreoS.visible=false;
+MikaS.visible=false;
+Yarn1.visible=false;
+Yarn2.visible=false;
+Yarn3.visible=false;
+Yarn4.visible=false;
+Yarn5.visible=false;
+Yarn6.visible=false;
+Yarn7.visible=false;
+Yarn8.visible=false;
+StormyS.visible=false;
+box.visible=false;
+
+
+if(radioY.value()==2){
+MikaS.visible=true;
+MikaS.scale=0.2;
+MikaS.position.x=x;
+MikaS.position.y=y;
+}
+if(radioY.value()==3){
+OreoS.visible=true;
+OreoS.scale=0.2;
+OreoS.position.x=x;
+OreoS.position.y=y;
+}
+if(radioY.value()==1){
+StormyS.visible=true;
+StormyS.scale=0.2;
+StormyS.position.x=x;
+StormyS.position.y=y;
+}
+
+
 }
