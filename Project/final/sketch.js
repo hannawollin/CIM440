@@ -1,4 +1,4 @@
-// read me, title, basic instruction, slides (part of read me)
+// read me, title, basic instruction, slides (part of read me)???!!!!
 
 var page=0;  //page 0=home, page 1=tictactoe
 var tictactoe="Tic-Tac-Toe";
@@ -43,21 +43,21 @@ function setup() {
   createCanvas(800,500);
   homebutton=createButton('Home');
   homebutton.mousePressed(function(){page=0;})
-  homebutton.position(50,50);
+  homebutton.position(50,100);
   homebutton.size(80,80);
   homebutton.style("font-family","Comic Sans MS");
   homebutton.style("background-color","#00f");
   homebutton.style("color","#fff");
   tictactoebutton=createButton(tictactoe);
   tictactoebutton.mousePressed(function(){page=1;})
-  tictactoebutton.position(50,150);
+  tictactoebutton.position(50,200);
   tictactoebutton.size(80,80);
   tictactoebutton.style("font-family","Comic Sans MS");
   tictactoebutton.style("background-color","#32CD32");
   tictactoebutton.style("color","#fff");
   yarnbutton=createButton('Yarn Game');
   yarnbutton.mousePressed(function(){page=2;})
-  yarnbutton.position(50,250);
+  yarnbutton.position(50,300);
   yarnbutton.size(80,80);
   yarnbutton.style("font-family","Comic Sans MS");
   yarnbutton.style("background-color","red");
@@ -99,40 +99,10 @@ function setup() {
   yarnreset=createButton('Reset');
   yarnreset.mousePressed(yarnReset);
   yarnreset.position(150,430);
-  yarnreset.size(70,50);
+  yarnreset.size(55,50);
   yarnreset.style("font-family","Comic Sans MS");
   yarnreset.style("background-color","#8b0000");
   yarnreset.style("color","#fff");
-  mazebutton=createButton('Maze');
-  mazebutton.mousePressed(function(){page=3;})
-  mazebutton.position(50,350);
-  mazebutton.size(80,80);
-  mazebutton.style("font-family","Comic Sans MS");
-  mazebutton.style("background-color","orange");
-  mazebutton.style("color","#fff");
-  fish = createSprite(195, 450);
-  fish.addAnimation('normal', 'fish.png');
-  up = createSprite(750, 310);
-  up.addAnimation('normal', 'long.png');
-  up1 = createSprite(150, 320);
-  up1.addAnimation('normal', 'long.png');
-  up2 = createSprite(150, 220);
-  up2.addAnimation('normal', 'long.png');
-
-  side = createSprite(622, 450);
-  side.addAnimation('normal', 'long copy.png');
-  side1 = createSprite(372, 450);
-  side1.addAnimation('normal', 'long copy.png');
-  side2 = createSprite(278, 85);
-  side2.addAnimation('normal', 'long copy.png');
-  side3 = createSprite(508, 85);
-  side3.addAnimation('normal', 'long copy.png');
-
-
-
-
-
-
 
 
   //tic-tac-toe midtermsetup
@@ -444,9 +414,9 @@ text('CHOOSE A CAT & PUSH THE YARN INTO THE BOX', 80,35);
 text("SCORE", 280,480);
 yarnreset.show();
 radioY.show();
-MikaS.scale=0.5;
-OreoS.scale=0.5;
-StormyS.scale=0.5;
+MikaS.scale=0.4;
+OreoS.scale=0.4;
+StormyS.scale=0.4;
 Yarn1.scale=0.2;
 Yarn2.scale=0.2;
 Yarn3.scale=0.2;
@@ -566,57 +536,4 @@ e=0;
 f=0;
 g=0;
 h=0;
-}
-
-function Maze(){
-background('green');
-fill('black');
-textSize(20);
-text('CHOOSE A CAT:', 430,35);
-radioY.show();
-drawSprites()
-up.scale=0.3;
-side.scale=0.3;
-side1.scale=0.3;
-up1.scale=0.3;
-fish.scale=0.2;
-up2.scale=0.3;
-side2.scale=0.3;
-side3.scale=0.3;
-
-
-OreoS.visible=false;
-MikaS.visible=false;
-Yarn1.visible=false;
-Yarn2.visible=false;
-Yarn3.visible=false;
-Yarn4.visible=false;
-Yarn5.visible=false;
-Yarn6.visible=false;
-Yarn7.visible=false;
-Yarn8.visible=false;
-StormyS.visible=false;
-box.visible=false;
-
-
-if(radioY.value()==2){
-MikaS.visible=true;
-MikaS.scale=0.2;
-MikaS.position.x=x;
-MikaS.position.y=y;
-}
-if(radioY.value()==3){
-OreoS.visible=true;
-OreoS.scale=0.2;
-OreoS.position.x=x;
-OreoS.position.y=y;
-}
-if(radioY.value()==1){
-StormyS.visible=true;
-StormyS.scale=0.2;
-StormyS.position.x=x;
-StormyS.position.y=y;
-}
-
-
 }
