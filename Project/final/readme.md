@@ -2,5 +2,4 @@
 
   Tic-tac-toe and a yarn gathering games featuring Oreo, Stormy, and Mika!
 
-  ![Ideation](//PUT IMAGE HERE)
-![Concept Powerpoint](CC440.pdf)
+[Concept Powerpoint](CC440.pdf)
